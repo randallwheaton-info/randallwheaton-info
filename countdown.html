@@ -147,7 +147,7 @@
                     'minutes': 0,
                     'seconds': 0,
                     'mondays': 0,
-                    'fridays': 0
+                    'fridays': 1
                 };
             }
             var seconds = Math.floor((t / 1000) % 60);
@@ -161,19 +161,13 @@
                 if (day.getDay() == 1) {
                     mondays = mondays + 1;
                 }
-                if (day.getDay() == 5) {
-                    fridays = fridays + 1;
-                }
                 day = addDays(day, 1)
             }
             
             if (now.getDay() == 1 && now.getHours() >= 9) {
                 mondays = mondays - 1;
             }
-            if (now.getDay() == 5 && now.getHours() >= 16) {
-                fridays = fridays - 1;
-            }
-
+            
 
             return {
                 'total': t,
